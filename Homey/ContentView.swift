@@ -6,11 +6,46 @@
 //
 
 import SwiftUI
+import WebKit
+
+struct WebView: NSViewRepresentable {
+
+    let view: WKWebView = WKWebView()
+
+    var request: URLRequest {
+        get{
+            let url: URL = URL(string: "https://my.homey.app")!
+            let request: URLRequest = URLRequest(url: url)
+            return request
+        }
+    }
+
+    func makeNSView(context: Context) -> WKWebView {
+        // Set User Agent
+        let dictionary = Bundle.main.infoDictionary!
+        let version = dictionary["CFBundleShortVersionString"] as! String
+        let build = dictionary["CFBundleVersion"] as! String
+        let systemVersion = ProcessInfo.processInfo.operatingSystemVersion
+        view.customUserAgent = "HomeyMacOS?version=\(version)&build=\(build)&macOS=\(systemVersion.majorVersion).\(systemVersion.minorVersion).\(systemVersion.patchVersion)"
+        
+        view.load(request)
+        return view
+    }
+
+    func updateNSView(_ view: WKWebView, context: Context) {
+        view.load(request)
+    }
+
+}
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        GeometryReader { g in
+            ScrollView {
+                WebView()
+                .frame(height: g.size.height)
+            }.frame(height: g.size.height)
+        }
     }
 }
 

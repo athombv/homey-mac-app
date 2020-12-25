@@ -53,6 +53,7 @@
 		60CAB92F25960EFA007AEA2F /* Homey */ = {
 			isa = PBXGroup;
 			children = (
+				60CAB94B259615F0007AEA2F /* Assets */,
 				60CAB93025960EFA007AEA2F /* HomeyApp.swift */,
 				60CAB93225960EFA007AEA2F /* ContentView.swift */,
 				60CAB93425960EFB007AEA2F /* Assets.xcassets */,
@@ -69,6 +70,13 @@
 				60CAB93725960EFB007AEA2F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		60CAB94B259615F0007AEA2F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,7 +289,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.homey.Homey;
+				PRODUCT_BUNDLE_IDENTIFIER = app.homey.macos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -305,7 +313,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.homey.Homey;
+				PRODUCT_BUNDLE_IDENTIFIER = app.homey.macos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
