@@ -3,10 +3,10 @@
     <channel>
         <title>Homey</title>
         <item>
-            <title>1.1</title>
+            <title>1.0</title>
             <pubDate>Sat, 26 Dec 2020 15:45:27 +0100</pubDate>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://9900a1b47b36.ngrok.io/Homey-1.zip" sparkle:version="2" sparkle:shortVersionString="1.1" length="2796726" type="application/octet-stream"/>
+            <enclosure url="https://homey-mac-app.athom.com/Homey-1.zip" sparkle:version="1" sparkle:shortVersionString="1.0" length="2796726" type="application/octet-stream"/>
         </item>
     </channel>
 </rss>
