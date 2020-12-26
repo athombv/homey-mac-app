@@ -11,6 +11,9 @@
 		60903D5B259775C100DCE51F /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 60903D58259772D200DCE51F /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		60903D6125977D4000DCE51F /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60903D6025977D4000DCE51F /* StatusBarController.swift */; };
 		60903D6325977E2300DCE51F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60903D6225977E2300DCE51F /* Main.storyboard */; };
+		60903D6C259787B200DCE51F /* LetsMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60903D6B259787B200DCE51F /* LetsMove.framework */; };
+		60903D6D2597880000DCE51F /* LetsMove.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 60903D6B259787B200DCE51F /* LetsMove.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		60903D702597884600DCE51F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60903D6F2597884600DCE51F /* Security.framework */; };
 		60CAB93125960EFA007AEA2F /* HomeyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CAB93025960EFA007AEA2F /* HomeyApp.swift */; };
 		60CAB93325960EFA007AEA2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CAB93225960EFA007AEA2F /* ContentView.swift */; };
 		60CAB93525960EFB007AEA2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60CAB93425960EFB007AEA2F /* Assets.xcassets */; };
@@ -25,6 +28,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				60903D5B259775C100DCE51F /* Sparkle.framework in CopyFiles */,
+				60903D6D2597880000DCE51F /* LetsMove.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +38,8 @@
 		60903D58259772D200DCE51F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		60903D6025977D4000DCE51F /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		60903D6225977E2300DCE51F /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		60903D6B259787B200DCE51F /* LetsMove.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LetsMove.framework; sourceTree = "<group>"; };
+		60903D6F2597884600DCE51F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		60CAB92D25960EFA007AEA2F /* Homey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60CAB93025960EFA007AEA2F /* HomeyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeyApp.swift; sourceTree = "<group>"; };
 		60CAB93225960EFA007AEA2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,7 +54,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60903D702597884600DCE51F /* Security.framework in Frameworks */,
 				60903D59259772D200DCE51F /* Sparkle.framework in Frameworks */,
+				60903D6C259787B200DCE51F /* LetsMove.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,9 +66,18 @@
 		60903D502597715A00DCE51F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60903D6B259787B200DCE51F /* LetsMove.framework */,
 				60903D58259772D200DCE51F /* Sparkle.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		60903D6E2597884600DCE51F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60903D6F2597884600DCE51F /* Security.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		60CAB92425960EFA007AEA2F = {
@@ -68,6 +85,7 @@
 			children = (
 				60CAB92F25960EFA007AEA2F /* Homey */,
 				60CAB92E25960EFA007AEA2F /* Products */,
+				60903D6E2597884600DCE51F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -312,12 +330,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Homey/Homey.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Homey/Preview Content\"";
 				DEVELOPMENT_TEAM = UMR24L9Q8W;
-				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Homey/Frameworks",
@@ -329,6 +350,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = app.homey.macos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -341,12 +363,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Homey/Homey.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Homey/Preview Content\"";
 				DEVELOPMENT_TEAM = UMR24L9Q8W;
-				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Homey/Frameworks",
@@ -358,6 +383,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = app.homey.macos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
