@@ -12,6 +12,7 @@ This project is a macOS app that embeds the [Homey Web App](https://my.homey.app
 - [ ] Flow Widget
 - [ ] Device Widget
 - [ ] Touch Bar
+- [ ] Push Notifications
 
 ## Usage
 
