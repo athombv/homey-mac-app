@@ -16,7 +16,7 @@ This project is a macOS app that embeds the [Homey Web App](https://my.homey.app
 
 ## Usage
 
-Head over to [releases](https://github.com/athombv/homey-mac-app/releases) to download the latest version.
+Head over to [Releases](https://github.com/athombv/homey-mac-app/releases) to download the latest version.
 
 ## Contributing
 
