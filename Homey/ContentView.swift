@@ -45,7 +45,7 @@ struct ContentView: View {
                 WebView()
                 .frame(height: g.size.height)
             }.frame(height: g.size.height)
-        }
+        }.frame(minWidth: 1000, minHeight: 700)
     }
 }
 

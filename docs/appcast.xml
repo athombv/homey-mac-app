@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Homey</title>
+        <item>
+            <title>1.1</title>
+            <pubDate>Sat, 26 Dec 2020 15:45:27 +0100</pubDate>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://9900a1b47b36.ngrok.io/Homey-1.zip" sparkle:version="2" sparkle:shortVersionString="1.1" length="2796726" type="application/octet-stream"/>
+        </item>
+    </channel>
+</rss>
