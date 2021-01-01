@@ -10,6 +10,21 @@ import WebKit
 
 struct WebView: NSViewRepresentable {
 
+    class Coordinator: NSObject, WKNavigationDelegate {
+        var parent: WebView
+        
+        init(_ parent: WebView) {
+            self.parent = parent
+        }
+                        
+        func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+            if navigationAction.targetFrame == nil, let _ = navigationAction.request.url {
+                webView.load(navigationAction.request)
+            }
+            decisionHandler(WKNavigationActionPolicy.allow)
+        }
+    }
+
     let view: WKWebView = WKWebView()
 
     var request: URLRequest {
@@ -20,6 +35,10 @@ struct WebView: NSViewRepresentable {
         }
     }
 
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
     func makeNSView(context: Context) -> WKWebView {
         // Set User Agent
         let dictionary = Bundle.main.infoDictionary!
@@ -33,6 +52,7 @@ struct WebView: NSViewRepresentable {
     }
 
     func updateNSView(_ view: WKWebView, context: Context) {
+        view.navigationDelegate = context.coordinator
         view.load(request)
     }
 
