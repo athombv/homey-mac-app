@@ -18,17 +18,21 @@ struct WebView: NSViewRepresentable {
         }
                         
         func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-            if navigationAction.targetFrame == nil, let _ = navigationAction.request.url {
-                webView.load(navigationAction.request)
+            guard navigationAction.targetFrame == nil,
+                  let url = navigationAction.request.url
+            else {
+                decisionHandler(.allow)
+                return
             }
-            decisionHandler(WKNavigationActionPolicy.allow)
+            NSWorkspace.shared.open(url)
+            decisionHandler(.cancel)
         }
     }
 
     let view: WKWebView = WKWebView()
 
     var request: URLRequest {
-        get{
+        get {
             let url: URL = URL(string: "https://my.homey.app")!
             let request: URLRequest = URLRequest(url: url)
             return request
