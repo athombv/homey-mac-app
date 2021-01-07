@@ -69,7 +69,7 @@ struct ContentView: View {
                 WebView()
                 .frame(height: g.size.height)
             }.frame(height: g.size.height)
-        }.frame(minWidth: 1000, minHeight: 700)
+        }.frame(minWidth: 1100, minHeight: 780)
     }
 }
 
