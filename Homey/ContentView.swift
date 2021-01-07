@@ -9,23 +9,81 @@ import SwiftUI
 import WebKit
 
 struct WebView: NSViewRepresentable {
-
     class Coordinator: NSObject, WKNavigationDelegate {
         var parent: WebView
-        
+
         init(_ parent: WebView) {
             self.parent = parent
         }
-                        
-        func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-            guard navigationAction.targetFrame == nil,
-                  let url = navigationAction.request.url
+
+        func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
+                     decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+
+            guard let url = navigationAction.request.url
             else {
-                decisionHandler(.allow)
+                decisionHandler(.cancel)
                 return
             }
-            NSWorkspace.shared.open(url)
-            decisionHandler(.cancel)
+            guard navigationAction.targetFrame != nil
+            else {
+                NSWorkspace.shared.open(url)
+                decisionHandler(.cancel)
+                return
+            }
+            guard !url.pathComponents.isEmpty
+            else {
+                saveFile(from: url) { _ in
+                    decisionHandler(.cancel)
+                }
+                return
+            }
+            decisionHandler(.allow)
+
+
+        }
+
+        /// Presents the save panel modal to store the file from the server on the disk.
+        /// - Parameters:
+        ///   - downloadURL: The url to download the file.
+        ///   - completion: The block to call after the user closes the panel.
+        private func saveFile(from downloadURL: URL, completion: @escaping (_ result: Result<Bool, Error>) -> ()) {
+            let savePanel = NSSavePanel()
+            savePanel.canCreateDirectories = true
+            savePanel.showsTagField = false
+            savePanel.nameFieldStringValue = "insights.csv"
+            savePanel.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.modalPanelWindow)))
+
+            savePanel.begin { result in
+                guard result == .OK, let url = savePanel.url
+                else {
+                    completion(.failure(
+                        NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to get file location"])
+                    ))
+                    return
+                }
+
+                URLSession.shared.dataTask(with: downloadURL) { data, response, err in
+                    guard let data = data, err == nil
+                    else {
+                        completion(.failure(
+                            NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to download the file"])
+                        ))
+                        return
+                    }
+                    if let httpResponse = response as? HTTPURLResponse {
+                        debugPrint("Download http status is \(httpResponse.statusCode)")
+                    }
+
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        do {
+                            try data.write(to: url, options: .atomic)
+                            completion(.success(true))
+                        } catch {
+                            completion(.failure(error))
+                        }
+                    }
+                }.resume()
+            }
         }
     }
 
@@ -59,7 +117,6 @@ struct WebView: NSViewRepresentable {
         view.navigationDelegate = context.coordinator
         view.load(request)
     }
-
 }
 
 struct ContentView: View {
@@ -67,7 +124,7 @@ struct ContentView: View {
         GeometryReader { g in
             ScrollView {
                 WebView()
-                .frame(height: g.size.height)
+                    .frame(height: g.size.height)
             }.frame(height: g.size.height)
         }.frame(minWidth: 1100, minHeight: 780)
     }
