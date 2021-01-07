@@ -3,6 +3,12 @@
     <channel>
         <title>Homey</title>
         <item>
+            <title>1.2</title>
+            <pubDate>Thu, 07 Jan 2021 13:42:45 +0100</pubDate>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://homey-mac-app.athom.com/releases/Homey-3.zip" sparkle:version="3" sparkle:shortVersionString="1.2" length="2879089" type="application/octet-stream"/>
+        </item>
+        <item>
             <title>1.1</title>
             <pubDate>Sat, 26 Dec 2020 16:19:34 +0100</pubDate>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
