@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Sparkle
-import LetsMove
+//import LetsMove
 
 @main
 struct HomeyApp: App {
@@ -42,9 +42,9 @@ struct HomeyApp: App {
         }
     }
     
-    func applicationWillFinishLaunching(_ notification: Notification) {
-        PFMoveToApplicationsFolderIfNecessary()
-    }
+//    func applicationWillFinishLaunching(_ notification: Notification) {
+//        PFMoveToApplicationsFolderIfNecessary()
+//    }
     
     
 }

@@ -3,26 +3,32 @@
     <channel>
         <title>Homey</title>
         <item>
+            <title>1.4</title>
+            <pubDate>Sat, 16 Jan 2021 15:52:39 +0100</pubDate>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://homey-mac-app.athom.com/releases/Homey-5.dmg" sparkle:version="5" sparkle:shortVersionString="1.4" length="6111636" type="application/octet-stream"/>
+        </item>
+        <item>
             <title>1.3</title>
-            <pubDate>Thu, 07 Jan 2021 13:57:34 +0100</pubDate>
+            <pubDate>Fri, 15 Jan 2021 20:46:59 +0100</pubDate>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
             <enclosure url="https://homey-mac-app.athom.com/releases/Homey-4.zip" sparkle:version="4" sparkle:shortVersionString="1.3" length="2879087" type="application/octet-stream"/>
         </item>
         <item>
             <title>1.2</title>
-            <pubDate>Thu, 07 Jan 2021 13:42:45 +0100</pubDate>
+            <pubDate>Fri, 15 Jan 2021 20:46:59 +0100</pubDate>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
             <enclosure url="https://homey-mac-app.athom.com/releases/Homey-3.zip" sparkle:version="3" sparkle:shortVersionString="1.2" length="2879089" type="application/octet-stream"/>
         </item>
         <item>
             <title>1.1</title>
-            <pubDate>Sat, 26 Dec 2020 16:19:34 +0100</pubDate>
+            <pubDate>Fri, 15 Jan 2021 20:46:59 +0100</pubDate>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
             <enclosure url="https://homey-mac-app.athom.com/releases/Homey-2.zip" sparkle:version="2" sparkle:shortVersionString="1.1" length="2875075" type="application/octet-stream"/>
         </item>
         <item>
             <title>1.0</title>
-            <pubDate>Sat, 26 Dec 2020 15:45:27 +0100</pubDate>
+            <pubDate>Fri, 15 Jan 2021 20:46:59 +0100</pubDate>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
             <enclosure url="https://homey-mac-app.athom.com/releases/Homey-1.zip" sparkle:version="1" sparkle:shortVersionString="1.0" length="2796726" type="application/octet-stream"/>
         </item>
