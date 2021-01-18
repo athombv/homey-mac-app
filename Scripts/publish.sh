@@ -7,7 +7,7 @@ if [ -z "$1" ]
 fi
 
 rm -rf ./Homey.app
-cp -r $1 ./Homey.app
+cp -r "$1" ./Homey.app
 
 if [ ! -d "Homey.app" ] 
 then
