@@ -3,8 +3,14 @@
     <channel>
         <title>Homey</title>
         <item>
+            <title>9</title>
+            <pubDate>Sun, 24 Jan 2021 14:01:53 +0100</pubDate>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://homey-mac-app.athom.com/releases/Homey-9.dmg" sparkle:version="9" sparkle:shortVersionString="9" length="2824675" type="application/octet-stream"/>
+        </item>
+        <item>
             <title>1.5</title>
-            <pubDate>Mon, 18 Jan 2021 20:03:37 +0100</pubDate>
+            <pubDate>Sun, 24 Jan 2021 14:00:17 +0100</pubDate>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
             <enclosure url="https://homey-mac-app.athom.com/releases/Homey-6.dmg" sparkle:version="6" sparkle:shortVersionString="1.5" length="6170732" type="application/octet-stream"/>
         </item>
@@ -25,12 +31,6 @@
             <pubDate>Fri, 15 Jan 2021 20:46:59 +0100</pubDate>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
             <enclosure url="https://homey-mac-app.athom.com/releases/Homey-3.zip" sparkle:version="3" sparkle:shortVersionString="1.2" length="2879089" type="application/octet-stream"/>
-        </item>
-        <item>
-            <title>1.1</title>
-            <pubDate>Fri, 15 Jan 2021 20:46:59 +0100</pubDate>
-            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://homey-mac-app.athom.com/releases/Homey-2.zip" sparkle:version="2" sparkle:shortVersionString="1.1" length="2875075" type="application/octet-stream"/>
         </item>
     </channel>
 </rss>
