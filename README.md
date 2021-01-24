@@ -19,9 +19,10 @@ This project is a macOS app that embeds the [Homey Web App](https://my.homey.app
 Head over to [Releases](https://github.com/athombv/homey-mac-app/releases) to download the latest version.
 
 ## Building
-1. Create an artefact `Homey.app` with Xcode with a newer build & version. Notarize it and save it somewhere.
 
-2. Run `./Scripts/publish.sh /path/to/Homey.app`
+1. In Xcode, navigate to _Product_ > _Archive_.
+2. In the _Archives_ window, click _Distribute App_ > _Developer ID_ > _Export_ and select the Athom B.V. Developer ID certificate. No profiles should be selected. Xcode will export _Homey.app_.
+3. Run `./scripts/publish.sh /path/to/Homey.app` to pack it into `Homey.dmg`, notarize and staple it.
 
 > This will create a `.dmg` file in `./docs/releases/Homey-{build}.dmg` and update `./docs/appcast.xml`.
 
